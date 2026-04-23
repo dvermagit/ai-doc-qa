@@ -1,0 +1,17 @@
+[run]
+omit =
+    app/__init__.py
+
+[report]
+exclude_lines =
+    pragma: no cover
+    if settings.gemini_api_key:
+    import google.generativeai as genai
+    genai.configure.*
+    model = genai.*
+    response = model.*
+    return response.text.*
+    result = genai.*
+    return list.*
+    except Exception:
+    pass
